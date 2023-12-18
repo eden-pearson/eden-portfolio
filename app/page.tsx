@@ -1,5 +1,5 @@
 'use client'
-import { Canvas } from '@react-three/fiber'
+// import { Canvas } from '@react-three/fiber'
 import Link from 'next/link'
 import { useEffect } from 'react'
 
@@ -46,9 +46,6 @@ export default function Home() {
             </a>
           </li>
         </ul>
-        <div>
-          <Canvas></Canvas>
-        </div>
       </div>
       <div id="right-div" className="w-2/3">
         <div className="mb-20">
