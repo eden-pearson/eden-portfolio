@@ -2,16 +2,25 @@
 // import { Canvas } from '@react-three/fiber'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Home() {
   useEffect(() => {})
 
   return (
-    <main className="flex flex-row m-10 gap-x-6">
+    <main className="flex flex-row m-10 gap-x-6 h-screen">
       <div id="left-div" className="w-1/3">
-        <h1 className="text-4xl font-semibold">Eden Pearson</h1>
-        <h2 className="text-lg ">Full Stack Software Developer</h2>
-        <p className="my-6">
+        <Image
+          src="/eden.png"
+          alt="eden software developer"
+          height={200}
+          width={400}
+          className=""
+        />
+        <h2 className="text-xl text-center font-medium">
+          Full Stack Software Developer
+        </h2>
+        <p className="my-6 text-center font-thin">
           I build beautiful and accessible digital experiences for the web
         </p>
         <nav>
@@ -32,17 +41,17 @@ export default function Home() {
         <ul className="flex flex-row my-10">
           <li className="mx-4">
             <a href="https://github.com/eden-pearson">
-              <i className="fa-brands fa-github fa-xl hover:text-teal-300"></i>
+              <i className="fa-brands fa-github fa-xl hover:text-eden-blue"></i>
             </a>
           </li>
           <li className="mx-4">
             <a href="https://www.linkedin.com/in/edenpearson/">
-              <i className="fa-brands fa-linkedin fa-xl hover:text-teal-300"></i>
+              <i className="fa-brands fa-linkedin fa-xl hover:text-eden-blue"></i>
             </a>
           </li>
           <li className="mx-4">
             <a href="https://www.linkedin.com/in/edenpearson/">
-              <i className="fa-solid fa-envelope fa-xl hover:text-teal-300"></i>
+              <i className="fa-solid fa-envelope fa-xl hover:text-eden-blue"></i>
             </a>
           </li>
         </ul>
@@ -60,7 +69,7 @@ export default function Home() {
             creator of technology rather than just a user.
           </p>
           <a
-            className="group hover:underline-offset-8 decoration-teal-300 hover:underline"
+            className="group hover:underline-offset-8 decoration-eden-blue hover:underline"
             href="/resume.pdf"
             download
           >
@@ -72,7 +81,7 @@ export default function Home() {
           <li>
             {' '}
             <a href="https://www.waitangimarae.co.nz/">
-              <div className="flex flex-row gap-x-4 items-center hover:text-teal-300 group">
+              <div className="flex flex-row gap-x-4 items-center hover:text-eden-blue group">
                 <h3 className="text-lg font-semibold">
                   Waitangi Marae Website
                 </h3>
@@ -80,13 +89,13 @@ export default function Home() {
               </div>
             </a>
             <ul className="flex flex-wrap gap-x-3">
-              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300 ">
+              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
                 NextJS
               </li>
-              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300 ">
+              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
                 TypeScript
               </li>
-              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300 ">
+              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
                 SilverStripe
               </li>
             </ul>
@@ -96,7 +105,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold">TaskMaster</h3>
             </div>
             <ul className="flex flex-wrap gap-x-3">
-              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300 ">
+              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
                 TypeScript
               </li>
             </ul>
@@ -106,13 +115,13 @@ export default function Home() {
               <h3 className="text-lg font-semibold">ChronoFlow</h3>
             </div>
             <ul className="flex flex-wrap gap-x-3">
-              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300 ">
+              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
                 TypeScript
               </li>
-              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300 ">
+              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
                 ThreeJS
               </li>
-              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300 ">
+              <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
                 React
               </li>
             </ul>
