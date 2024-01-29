@@ -1,90 +1,54 @@
 'use client'
 // import { Canvas } from '@react-three/fiber'
+import { useLayoutEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import MouseEffect from './MouseImage'
+import { Canvas } from '@react-three/fiber'
+import gsap from 'gsap'
+// import MouseEffect from './MouseImage'
 
 export default function Home() {
+  const comp = useRef(null)
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {}, comp)
+
+    return () => ctx.revert()
+  })
   return (
-    <main>
+    <main className="bg-orange-50">
       <div className="z-0 "></div>
-      <MouseEffect />
+      <nav className="fixed top-0 w-full flex justify-between items-center h-12 bg-gray-800 text-white px-4 z-10">
+        <div className="flex items-center">
+          <span className="font-semibold text-xl">EP</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <Link href="#projects" className="hover:text-gray-300">
+            Projects
+          </Link>
+          <Link href="#contact" className="hover:text-gray-300">
+            Contact
+          </Link>
+          <a className="" href="/resume.pdf" download>
+            Resume
+          </a>
+        </div>
+      </nav>
       <div />
-      <div className="flex flex-col md:flex-row m-10 gap-x-6 h-screen">
-        <div id="left-div" className="md:w-1/3 w-full">
-          <div className="flex items-center justify-center">
-            <Image
-              src="/eden.png"
-              alt="eden software developer"
-              height={200}
-              width={400}
-              className="mb-2"
-            />
-          </div>
+      <div className="">
+        <div id="" className="h-screen pt-32 text-center">
+          <div className="flex items-center justify-center"></div>
+          <h1 className="text-8xl">Eden Pearson</h1>
           <h2 className="text-2xl text-center font-thin">
             Full Stack Software Developer
           </h2>
-          <p className="my-6 text-center font-thin italic">
-            I build beautiful and accessible digital experiences for the web
-          </p>
-          <nav>
-            <ul id="nav-bar" className="font-light text-sm tracking-wider">
-              <li className="flex flex-row items-center group mb-2">
-                {
-                  // TODO make the hr lines become longer on hover and click
-                }
-                <hr className="h-1 w-12 mr-2 group-hover:w-20"></hr>
-                <Link href="#about-section">ABOUT</Link>
-              </li>
-              <li className="flex flex-row items-center group">
-                <hr className="h-1 w-12 mr-2 group-hover:w-20"></hr>
-                <Link href="#projects-section">PROJECTS</Link>
-              </li>
-            </ul>
-          </nav>
-          <ul className="flex flex-row my-10 items-center justify-center">
-            <li className="mx-4">
-              <a href="https://github.com/eden-pearson">
-                <i className="fa-brands fa-github fa-xl hover:text-eden-blue"></i>
-              </a>
-            </li>
-            <li className="mx-4">
-              <a href="https://www.linkedin.com/in/edenpearson/">
-                <i className="fa-brands fa-linkedin fa-xl hover:text-eden-blue"></i>
-              </a>
-            </li>
-            <li className="mx-4">
-              <a href="https://www.linkedin.com/in/edenpearson/">
-                <i className="fa-solid fa-envelope fa-xl hover:text-eden-blue"></i>
-              </a>
-            </li>
-          </ul>
         </div>
-        <div id="right-div" className="md:w-2/3 w-full">
-          <div className="mb-20">
-            <p className="mb-6 text-justify">
-              Tēnā Koe! I&apos;m a full-stack developer from Northland who is
-              fuelled by creating accessible software for Kiwis. <br />
-              <br />
-              My journey into tech began during my time in a small digital team
-              at GSK (a global pharmaceutical company), where I saw the
-              possibilities for technology to revolutionize New Zealand&apos;s
-              healthcare system. I decided that I wanted to get in on the action
-              by being a creator of technology rather than just a user.
-            </p>
-            <a
-              className="group hover:underline-offset-8 decoration-eden-blue hover:underline"
-              href="/resume.pdf"
-              download
-            >
-              Download My Resume
-              <i className="fa-solid fa-arrow-right group-hover:translate-x-1 ml-4"></i>
-            </a>
-          </div>
-          <h3>Projects</h3>
-          <ol id="projects-section" className="flex-col flex gap-y-6">
+        <div className="flex flex-col justify-center items-center my-10">
+          <h3 className="mb-4 text-lg font-semibold">Projects</h3>
+          <ol
+            id="projects-section"
+            className="flex-col flex gap-y-6 items-center"
+          >
             <li>
-              {' '}
               <a href="https://www.waitangimarae.co.nz/">
                 <div className="flex flex-row gap-x-4 items-center hover:text-eden-blue group">
                   <h3 className="text-lg font-semibold">
@@ -104,6 +68,12 @@ export default function Home() {
                   SilverStripe
                 </li>
               </ul>
+              <Image
+                src="/waitangimarae-screenshot.png"
+                width="400"
+                height="250"
+                alt="screenshot of waitangi marae website"
+              ></Image>
             </li>
             <li>
               <div>
@@ -114,10 +84,18 @@ export default function Home() {
                   TypeScript
                 </li>
               </ul>
+              <Image
+                src="/taskmaster-screenshot.png"
+                width="400"
+                height="250"
+                alt="screenshot of taskmaster website"
+              ></Image>
             </li>
             <li>
               <div>
-                <h3 className="text-lg font-semibold">ChronoFlow</h3>
+                <a href="https://chronoflow.pushed.nz/">
+                  <h3 className="text-lg font-semibold">ChronoFlow</h3>
+                </a>
               </div>
               <ul className="flex flex-wrap gap-x-3">
                 <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
@@ -130,9 +108,54 @@ export default function Home() {
                   React
                 </li>
               </ul>
+              <Image
+                src="/chronoflow-screenshot.png"
+                width="400"
+                height="250"
+                alt="screenshot of chronoflow website"
+              ></Image>
+            </li>
+            <li>
+              <div>
+                <h3 className="text-lg font-semibold">Kura Reo</h3>
+              </div>
+              <ul className="flex flex-wrap gap-x-3">
+                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                  TypeScript
+                </li>
+                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                  React
+                </li>
+              </ul>
+              <Image
+                src="/kurareo-screenshot.png"
+                width="400"
+                height="250"
+                alt="screenshot of kura reo website"
+              ></Image>
             </li>
           </ol>
         </div>
+        <footer>
+          {' '}
+          <ul className="flex flex-row my-10 items-center justify-center">
+            <li className="mx-4">
+              <a href="https://github.com/eden-pearson">
+                <i className="fa-brands fa-github fa-xl hover:text-eden-blue"></i>
+              </a>
+            </li>
+            <li className="mx-4">
+              <a href="https://www.linkedin.com/in/edenpearson/">
+                <i className="fa-brands fa-linkedin fa-xl hover:text-eden-blue"></i>
+              </a>
+            </li>
+            <li className="mx-4">
+              <a href="https://www.linkedin.com/in/edenpearson/">
+                <i className="fa-solid fa-envelope fa-xl hover:text-eden-blue"></i>
+              </a>
+            </li>
+          </ul>
+        </footer>
       </div>
     </main>
   )
