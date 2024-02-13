@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Canvas } from '@react-three/fiber'
 import gsap from 'gsap'
+import NavBar from './components/NavBar'
 // import MouseEffect from './MouseImage'
 
 export default function Home() {
@@ -16,23 +17,9 @@ export default function Home() {
   })
   return (
     <main className="bg-orange-50">
+      <NavBar />
       <div className="z-0 "></div>
-      <nav className="fixed top-0 w-full flex justify-between items-center h-12 bg-gray-800 text-white px-4 z-10">
-        <div className="flex items-center">
-          <span className="font-semibold text-xl">EP</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <Link href="#projects" className="hover:text-gray-300">
-            Projects
-          </Link>
-          <Link href="#contact" className="hover:text-gray-300">
-            Contact
-          </Link>
-          <a className="" href="/resume.pdf" download>
-            Resume
-          </a>
-        </div>
-      </nav>
+
       <div />
       <div className="">
         <div id="" className="h-screen pt-32 text-center">
