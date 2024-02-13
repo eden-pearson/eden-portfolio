@@ -5,5 +5,5 @@
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
 body {
-  @apply bg-gradient-to-tl from-bg-blue to-blue-950 text-gray-50;
+  /* @apply bg-gradient-to-tl from-bg-blue to-blue-950 text-gray-50; */
 }
