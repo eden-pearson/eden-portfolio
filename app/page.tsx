@@ -12,7 +12,6 @@ export default function Home() {
   const comp = useRef(null)
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {}, comp)
-
     return () => ctx.revert()
   })
   return (
