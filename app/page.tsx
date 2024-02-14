@@ -43,7 +43,7 @@ export default function Home() {
   }
 
   return (
-    <main className="bg-orange-50">
+    <main>
       <NavBar />
       <div className="z-0 "></div>
 
@@ -64,7 +64,7 @@ export default function Home() {
           >
             <li>
               <a href="https://www.waitangimarae.co.nz/">
-                <div className="flex flex-row gap-x-4 items-center hover:text-eden-blue group">
+                <div className="flex flex-row gap-x-4 items-center hover:text-zinc-200 group">
                   <h3 className="text-lg font-semibold">
                     Waitangi Marae Website
                   </h3>
@@ -72,13 +72,13 @@ export default function Home() {
                 </div>
               </a>
               <ul className="flex flex-wrap gap-x-3">
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className=" my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   NextJS
                 </li>
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   TypeScript
                 </li>
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   SilverStripe
                 </li>
               </ul>
@@ -94,7 +94,7 @@ export default function Home() {
                 <h3 className="text-lg font-semibold">TaskMaster</h3>
               </div>
               <ul className="flex flex-wrap gap-x-3">
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 my-4 ">
                   TypeScript
                 </li>
               </ul>
@@ -112,13 +112,13 @@ export default function Home() {
                 </a>
               </div>
               <ul className="flex flex-wrap gap-x-3">
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   TypeScript
                 </li>
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   ThreeJS
                 </li>
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   React
                 </li>
               </ul>
@@ -134,10 +134,10 @@ export default function Home() {
                 <h3 className="text-lg font-semibold">Kura Reo</h3>
               </div>
               <ul className="flex flex-wrap gap-x-3">
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   TypeScript
                 </li>
-                <li className="rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-eden-blue ">
+                <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
                   React
                 </li>
               </ul>
@@ -151,7 +151,7 @@ export default function Home() {
           </ol>
         </div>
         <footer className="flex flex-row">
-          <div>
+          {/* <div>
             <h1>Get in touch.</h1>
             <form onSubmit={onSubmit}>
               <label>
@@ -165,22 +165,22 @@ export default function Home() {
               </label>
               <button type="submit">Send</button>
             </form>
-          </div>
+          </div> */}
           <div>
             <ul className="flex flex-row my-10 items-center justify-center">
               <li className="mx-4">
                 <a href="https://github.com/eden-pearson">
-                  <i className="fa-brands fa-github fa-xl hover:text-eden-blue"></i>
+                  <i className="fa-brands fa-github fa-xl hover:text-zinc-200"></i>
                 </a>
               </li>
               <li className="mx-4">
                 <a href="https://www.linkedin.com/in/edenpearson/">
-                  <i className="fa-brands fa-linkedin fa-xl hover:text-eden-blue"></i>
+                  <i className="fa-brands fa-linkedin fa-xl hover:text-zinc-200"></i>
                 </a>
               </li>
               <li className="mx-4">
                 <a href="https://www.linkedin.com/in/edenpearson/">
-                  <i className="fa-solid fa-envelope fa-xl hover:text-eden-blue"></i>
+                  <i className="fa-solid fa-envelope fa-xl hover:text-zinc-200"></i>
                 </a>
               </li>
             </ul>

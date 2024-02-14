@@ -4,6 +4,11 @@
 
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
+html,
 body {
-  /* @apply bg-gradient-to-tl from-bg-blue to-blue-950 text-gray-50; */
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  background-color: #1f1f1f;
+  color: #adacac;
 }
