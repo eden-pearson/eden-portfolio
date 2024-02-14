@@ -1,11 +1,11 @@
 'use client'
 // import { Canvas } from '@react-three/fiber'
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Canvas } from '@react-three/fiber'
 import gsap from 'gsap'
-import NavBar from './components/NavBar'
+import NavBar from './(components)/NavBar'
 // import MouseEffect from './MouseImage'
 
 export default function Home() {
@@ -14,6 +14,34 @@ export default function Home() {
     let ctx = gsap.context(() => {}, comp)
     return () => ctx.revert()
   })
+
+  async function onSubmit(event) {
+    event.preventDefault()
+    const formData = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      message: event.target.message.value,
+    }
+
+    const response = await fetch('/api/submitForm', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    if (response.ok) {
+      // Handle success
+      console.log('Form submitted successfully')
+      alert('Thank you for your submission!')
+    } else {
+      // Handle error
+      console.log('Form submission failed')
+      alert('Failed to submit form. Please try again.')
+    }
+  }
+
   return (
     <main className="bg-orange-50">
       <NavBar />
@@ -122,25 +150,41 @@ export default function Home() {
             </li>
           </ol>
         </div>
-        <footer>
-          {' '}
-          <ul className="flex flex-row my-10 items-center justify-center">
-            <li className="mx-4">
-              <a href="https://github.com/eden-pearson">
-                <i className="fa-brands fa-github fa-xl hover:text-eden-blue"></i>
-              </a>
-            </li>
-            <li className="mx-4">
-              <a href="https://www.linkedin.com/in/edenpearson/">
-                <i className="fa-brands fa-linkedin fa-xl hover:text-eden-blue"></i>
-              </a>
-            </li>
-            <li className="mx-4">
-              <a href="https://www.linkedin.com/in/edenpearson/">
-                <i className="fa-solid fa-envelope fa-xl hover:text-eden-blue"></i>
-              </a>
-            </li>
-          </ul>
+        <footer className="flex flex-row">
+          <div>
+            <h1>Get in touch.</h1>
+            <form onSubmit={onSubmit}>
+              <label>
+                Your name <input name="name" type="text"></input>
+              </label>
+              <label>
+                Email address <input name="email" type="email"></input>
+              </label>
+              <label>
+                Message/ / enquiry <input name="message" type="text"></input>
+              </label>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+          <div>
+            <ul className="flex flex-row my-10 items-center justify-center">
+              <li className="mx-4">
+                <a href="https://github.com/eden-pearson">
+                  <i className="fa-brands fa-github fa-xl hover:text-eden-blue"></i>
+                </a>
+              </li>
+              <li className="mx-4">
+                <a href="https://www.linkedin.com/in/edenpearson/">
+                  <i className="fa-brands fa-linkedin fa-xl hover:text-eden-blue"></i>
+                </a>
+              </li>
+              <li className="mx-4">
+                <a href="https://www.linkedin.com/in/edenpearson/">
+                  <i className="fa-solid fa-envelope fa-xl hover:text-eden-blue"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </footer>
       </div>
     </main>
