@@ -1,11 +1,12 @@
 'use client'
 // import { Canvas } from '@react-three/fiber'
-import { useLayoutEffect, useRef, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Canvas } from '@react-three/fiber'
 import gsap from 'gsap'
 import NavBar from './(components)/NavBar'
+import EmailSection from './(components)/EmailSection'
 // import MouseEffect from './MouseImage'
 
 export default function Home() {
@@ -14,31 +15,36 @@ export default function Home() {
     let ctx = gsap.context(() => {}, comp)
     return () => ctx.revert()
   })
+  const [emailSubmitted, setEmailSubmitted] = useState(false)
 
-  async function onSubmit(event) {
-    event.preventDefault()
-    const formData = {
-      name: event.target.name.value,
-      email: event.target.email.value,
-      message: event.target.message.value,
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const data = {
+      email: e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value,
     }
+    const JSONdata = JSON.stringify(data)
+    const endpoint = '/api/send'
 
-    const response = await fetch('/api/submitForm', {
+    // Form the request for sending data to the server.
+    const options = {
+      // The method is POST because we are sending data.
       method: 'POST',
-      body: JSON.stringify(formData),
+      // Tell the server we're sending JSON.
       headers: {
         'Content-Type': 'application/json',
       },
-    })
+      // Body of the request is the JSON data we created above.
+      body: JSONdata,
+    }
 
-    if (response.ok) {
-      // Handle success
-      console.log('Form submitted successfully')
-      alert('Thank you for your submission!')
-    } else {
-      // Handle error
-      console.log('Form submission failed')
-      alert('Failed to submit form. Please try again.')
+    const response = await fetch(endpoint, options)
+    const resData = await response.json()
+
+    if (response.status === 200) {
+      console.log('Message sent.')
+      setEmailSubmitted(true)
     }
   }
 
@@ -150,41 +156,28 @@ export default function Home() {
             </li>
           </ol>
         </div>
-        <footer className="flex flex-row">
-          {/* <div>
-            <h1>Get in touch.</h1>
-            <form onSubmit={onSubmit}>
-              <label>
-                Your name <input name="name" type="text"></input>
-              </label>
-              <label>
-                Email address <input name="email" type="email"></input>
-              </label>
-              <label>
-                Message/ / enquiry <input name="message" type="text"></input>
-              </label>
-              <button type="submit">Send</button>
-            </form>
-          </div> */}
-          <div>
-            <ul className="flex flex-row my-10 items-center justify-center">
-              <li className="mx-4">
-                <a href="https://github.com/eden-pearson">
-                  <i className="fa-brands fa-github fa-xl hover:text-zinc-200"></i>
-                </a>
-              </li>
-              <li className="mx-4">
-                <a href="https://www.linkedin.com/in/edenpearson/">
-                  <i className="fa-brands fa-linkedin fa-xl hover:text-zinc-200"></i>
-                </a>
-              </li>
-              <li className="mx-4">
-                <a href="https://www.linkedin.com/in/edenpearson/">
-                  <i className="fa-solid fa-envelope fa-xl hover:text-zinc-200"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+        <footer className="flex flex-col">
+          <EmailSection />
+          <ul className="flex flex-row my-10 items-center justify-center">
+            <li className="mx-4">
+              <a href="https://github.com/eden-pearson">
+                <i className="fa-brands fa-github fa-xl hover:text-zinc-200"></i>
+              </a>
+            </li>
+            <li className="mx-4">
+              <a href="https://www.linkedin.com/in/edenpearson/">
+                <i className="fa-brands fa-linkedin fa-xl hover:text-zinc-200"></i>
+              </a>
+            </li>
+            <li className="mx-4">
+              <a href="https://www.linkedin.com/in/edenpearson/">
+                <i className="fa-solid fa-envelope fa-xl hover:text-zinc-200"></i>
+              </a>
+            </li>
+          </ul>
+          <p className="mb-8 text-center">
+            © 2024 | Designed & Developed by Eden Pearson
+          </p>
         </footer>
       </div>
     </main>

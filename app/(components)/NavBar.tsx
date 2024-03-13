@@ -10,7 +10,7 @@ export default function NavBar() {
   }
   return (
     <div>
-      <nav className="fixed top-0 w-full flex justify-between items-center h-18 text-gray-300 px-4 z-10">
+      <nav className="fixed top-0 w-full flex justify-between items-center h-18 text-gray-300 px-4 z-10 bg-[#1f1f1f]">
         <div className="flex items-center">
           <span className="font-semibold text-xl">EP</span>
         </div>
@@ -42,17 +42,17 @@ export default function NavBar() {
         <ul className="flex flex-row my-10 items-center justify-center">
           <li className="mx-4">
             <a href="https://github.com/eden-pearson">
-              <i className="fa-brands fa-github fa-xl hover:text-eden-blue"></i>
+              <i className="fa-brands fa-github fa-xl hover:text-zinc-200"></i>
             </a>
           </li>
           <li className="mx-4">
             <a href="https://www.linkedin.com/in/edenpearson/">
-              <i className="fa-brands fa-linkedin fa-xl hover:text-eden-blue"></i>
+              <i className="fa-brands fa-linkedin fa-xl hover:text-zinc-200"></i>
             </a>
           </li>
           <li className="mx-4">
             <a href="https://www.linkedin.com/in/edenpearson/">
-              <i className="fa-solid fa-envelope fa-xl hover:text-eden-blue"></i>
+              <i className="fa-solid fa-envelope fa-xl hover:text-zinc-200"></i>
             </a>
           </li>
         </ul>
