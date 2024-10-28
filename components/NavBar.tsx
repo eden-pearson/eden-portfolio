@@ -9,8 +9,8 @@ export default function NavBar() {
     console.log(navMenu)
   }
   return (
-    <div>
-      <nav className="fixed top-0 w-full flex justify-between items-center h-18 text-gray-300 px-4 z-10 bg-[#1f1f1f]">
+    <div className="text-blue-800 bg-transparent sticky z-0">
+      <nav className="sticky top-0 py-6 top-0 w-full flex justify-between items-center h-18  px-4 z-10 ">
         <div className="flex items-center">
           <span className="font-semibold text-xl">EP</span>
         </div>
@@ -39,23 +39,6 @@ export default function NavBar() {
             Contact
           </Link>
         </div>
-        <ul className="flex flex-row my-10 items-center justify-center">
-          <li className="mx-4">
-            <a href="https://github.com/eden-pearson">
-              <i className="fa-brands fa-github fa-xl hover:text-zinc-200"></i>
-            </a>
-          </li>
-          <li className="mx-4">
-            <a href="https://www.linkedin.com/in/edenpearson/">
-              <i className="fa-brands fa-linkedin fa-xl hover:text-zinc-200"></i>
-            </a>
-          </li>
-          <li className="mx-4">
-            <a href="https://www.linkedin.com/in/edenpearson/">
-              <i className="fa-solid fa-envelope fa-xl hover:text-zinc-200"></i>
-            </a>
-          </li>
-        </ul>
       </nav>
       <div id="mobile-menu" className={navMenu === true ? '' : 'hidden'}>
         <div className="flex flex-col fixed top-20 w-full pl-10 bg-white py-6 gap-3">

@@ -8,10 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        'eden-blue': '#69DFFF',
-        'bg-blue': '#0F1EAB',
-      },
+      colors: {},
     },
   },
   plugins: [],
