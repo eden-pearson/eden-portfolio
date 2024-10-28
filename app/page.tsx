@@ -1,6 +1,7 @@
 'use client'
 // import { Canvas } from '@react-three/fiber'
 import React, { useLayoutEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 import { Canvas } from '@react-three/fiber'
 // import gsap from 'gsap'
@@ -21,7 +22,12 @@ export default function Home() {
       <div className="">
         <div id="" className="h-screen pt-32 text-center">
           <div className="flex items-center justify-center"></div>
-          <h1 className="text-8xl text-white">Eden Pearson</h1>
+          <Image
+            src="/full-name.png"
+            width="800"
+            height="500"
+            alt="screenshot of taskmaster website"
+          ></Image>
 
           <Typewriter />
         </div>
