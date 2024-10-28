@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "db/server.js", "db/index.js", "db/functions/messages.js", "db/connection.js", "db/connection.js"  ],
   "exclude": [
     "node_modules"
   ]
