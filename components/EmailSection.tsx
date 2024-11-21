@@ -9,41 +9,41 @@ export default function EmailSection() {
   const [emailSubmitted, setEmailSubmitted] = useState(false)
 
   // Type the event as React.FormEvent<HTMLFormElement>
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const data = {
-      email: e.currentTarget.email.value,
-      subject: e.currentTarget.subject.value,
-      message: e.currentTarget.message.value,
-    }
-    const JSONdata = JSON.stringify(data)
-    const endpoint = '/api/send'
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   const data = {
+  //     email: e.currentTarget.email.value,
+  //     subject: e.currentTarget.subject.value,
+  //     message: e.currentTarget.message.value,
+  //   }
+  //   const JSONdata = JSON.stringify(data)
+  //   const endpoint = '/api/send'
 
-    // Form the request for sending data to the server.
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSONdata,
-    }
+  // Form the request for sending data to the server.
+  // const options = {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSONdata,
+  // }
 
-    const response = await fetch(endpoint, options)
-    const resData = await response.json()
+  // const response = await fetch(endpoint, options)
+  // const resData = await response.json()
 
-    if (response.status === 200) {
-      console.log('Message sent.')
-      setEmailSubmitted(true)
-    }
-  }
+  // if (response.status === 200) {
+  //   console.log('Message sent.')
+  //   setEmailSubmitted(true)
+  // }
+  // }
 
   return (
     <section
       id="contact"
       className="grid md:grid-cols-2 mt-12 md:my-12 pt-24 gap-4 relative mx-10"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10">
+      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2">
+        {/* <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">Contact Me</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {' '}
@@ -111,7 +111,7 @@ export default function EmailSection() {
               Send Message
             </button>
           </form>
-        )}
+        )} */}
       </div>
     </section>
   )
