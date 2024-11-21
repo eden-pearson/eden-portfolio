@@ -3,7 +3,7 @@ import EmailSection from './EmailSection'
 export default function Footer() {
   return (
     <div className="flex flex-col">
-      <EmailSection />
+      {/* <EmailSection /> */}
       <ul className="flex flex-row my-10 items-center justify-center">
         <li className="mx-4">
           <a href="https://github.com/eden-pearson">

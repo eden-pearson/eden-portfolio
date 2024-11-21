@@ -20,13 +20,13 @@ export default function Home() {
 
       <div />
       <div className="">
-        <div id="" className="h-screen pt-32 text-center">
+        <div className="h-screen pt-32 text-center flex flex-col items-center">
           <div className="flex items-center justify-center"></div>
           <Image
             src="/full-name.png"
             width="800"
             height="500"
-            alt="screenshot of taskmaster website"
+            alt="eden pearson"
           ></Image>
 
           <Typewriter />
