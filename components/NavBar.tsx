@@ -9,7 +9,7 @@ export default function NavBar() {
     console.log(navMenu)
   }
   return (
-    <div className="text-blue-800 bg-transparent sticky z-0">
+    <div className="text-blue-800 bg-transparent sticky z-0 font-semibold">
       <nav className="sticky top-0 py-6 top-0 w-full flex justify-between items-center h-18  px-4 z-10 ">
         <div className="flex items-center">
           <span className="font-semibold text-xl">EP</span>

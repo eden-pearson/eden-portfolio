@@ -13,13 +13,13 @@ export default function Projects() {
             </div>
           </a>
           <ul className="flex flex-wrap gap-x-3">
-            <li className=" my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className=" my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               NextJS
             </li>
-            <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className="my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               TypeScript
             </li>
-            <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className="my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               SilverStripe
             </li>
           </ul>
@@ -35,7 +35,7 @@ export default function Projects() {
             <h3 className="text-lg font-semibold">TaskMaster</h3>
           </div>
           <ul className="flex flex-wrap gap-x-3">
-            <li className="rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 my-4 ">
+            <li className="rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 my-4 ">
               TypeScript
             </li>
           </ul>
@@ -53,13 +53,13 @@ export default function Projects() {
             </a>
           </div>
           <ul className="flex flex-wrap gap-x-3">
-            <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className="my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               TypeScript
             </li>
-            <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className="my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               ThreeJS
             </li>
-            <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className="my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               React
             </li>
           </ul>
@@ -75,10 +75,10 @@ export default function Projects() {
             <h3 className="text-lg font-semibold">Kura Reo</h3>
           </div>
           <ul className="flex flex-wrap gap-x-3">
-            <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className="my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               TypeScript
             </li>
-            <li className="my-4 rounded-full bg-zinc-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
+            <li className="my-4 rounded-full bg-blue-700 px-3 py-1 text-xs font-medium text-zinc-200 ">
               React
             </li>
           </ul>
